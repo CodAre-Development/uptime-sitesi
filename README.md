@@ -1,3 +1,2 @@
 # uptime-sitesi
-Uptime be yarak
-https://glitch.com/edit/#!/uptime-iste
+Glitch: https://glitch.com/edit/#!/uptime-iste
