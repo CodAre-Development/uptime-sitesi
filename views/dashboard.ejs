@@ -1,0 +1,102 @@
+<% include ./partials/header %>
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Kapat &times;</button>
+  <a href="/" class="w3-bar-item w3-button">Ana Sayfa</a>
+  <% if(user.admin === true){ %>
+  <a href="/panel" class="w3-bar-item w3-button">Admin Panel</a>
+  <% }else { %>
+  <%=  %>
+  <% } %>
+  <a href="/users/logout" class="w3-bar-item w3-button">Çıkış Yap</a>
+
+</div>
+<div class="bg-dark text-white">
+  
+  <button class="w3-button bg-dark w3-xlarge" onclick="w3_open()">☰</button>
+  <div class="w3-container">
+    <h1 class="mt-4">Dashboard'a Hojgeldin <%= user.name %></h1>  
+  </div>
+
+</div>
+<style>
+  body{
+    background-color: #333;
+  }
+  .bosluk{
+    height: 20px;
+  }
+
+</style>
+
+  
+<div class="container">
+
+
+
+<% include ./partials/header %>
+
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Yeni Site Ekle</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+   <div>
+    <div class="card card-body">
+      <% include ./partials/messages %>
+      <form action="/dashboard" method="POST">
+        <div class="form-group">
+          <label for="site_link">Site Adresi</label>
+          <input
+            type="site_link"
+            id="site_link"
+            name="site_link"
+            class="form-control"
+            placeholder="https://raksix.wtf Gibi"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Ekle
+        </button>
+      </form>
+    </div>
+  </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="bosluk"></div>
+  
+  
+  <div class="card" style="width: 100%;">
+  <div class="card-header">
+    <h1>
+      Şu anda <%- siteler.length %> adet siten uptimelanıyor
+    </h1>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Yeni Site Ekle
+</button>
+  </div>
+  <ul class="list-group list-group-flush">
+  <% siteler.forEach(function(site){ %>
+    <h1>
+      <li class="list-group-item"><%- site.site_link %></li>
+    </h1>
+  <% }) %>  
+  </ul>
+</div>
+  
+</div>
+

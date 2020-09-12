@@ -1,0 +1,46 @@
+<% include ./partials/header %>
+<style>
+  body{
+    background-color: #333;
+  }
+  .bosluk{
+    height: 100px;
+  }
+  .bosluk2{
+    height: 20px;
+  }
+</style>    
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body bg-dark text-white">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Giriş Yap</h1>
+      <% include ./partials/messages %>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="email">E-Posta</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Lütfen E-Postanızı Girin"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Şifre</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Lütfen Şifrenizi Girin"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="lead mt-4">
+        Hesabın mı yok? O zaman  <a href="/users/register">Kayıt ol</a>
+      </p>
+    </div>
+  </div>
+</div>

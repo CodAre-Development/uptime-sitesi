@@ -1,0 +1,98 @@
+
+
+<% if(user.admin === false){ %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<style>
+.bosluk{
+    height: 40%;
+}
+
+body{
+    background-color: #333;
+}
+</style>
+<div class="bosluk"></div>
+<div class="container">
+
+<div class="card text-white bg-dark mb-3">
+  <h5 class="card-header"><%= user.name %> Admin Değilsin</h5>
+  <div class="card-body">
+    <h5 class="card-title">Admin Değilsin Lan Sen Hayırdır!</h5>
+    <a href="/" class="btn btn-primary">Geri Dön</a>
+  </div>
+</div>
+
+</div>          
+<% }else { %>
+
+<% include ./partials/header %>
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Kapat &times;</button>
+  <a href="/" class="w3-bar-item w3-button">Ana Sayfa</a>
+  <% if(user.admin === true){ %>
+  <a href="/panel" class="w3-bar-item w3-button">Admin Panel</a>
+  <% }else { %>
+  <%=  %>
+  <% } %>
+  <a href="/users/logout" class="w3-bar-item w3-button">Çıkış Yap</a>
+
+</div>
+<div class="bg-dark text-white">
+  
+  <button class="w3-button bg-dark w3-xlarge" onclick="w3_open()">☰</button>
+  <div class="w3-container">
+    <h1 class="mt-4">Panele Hojgeldin <%= user.name %></h1>  
+  </div>
+
+</div>
+<style>
+  body{
+    background-color: #333;
+  }
+  .bosluk{
+    height: 20px;
+  }
+
+</style>
+
+  
+<div class="container">
+
+
+
+<% include ./partials/header %>
+
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+
+
+
+<div class="bosluk"></div>
+  
+  
+  <div class="card" style="width: 100%;">
+  <div class="card-header">
+    <h1>
+      Şu anda <%- users.length %>  Kullanıcı Kayıtlı
+
+    </h1>
+
+  </div>
+  <ul class="list-group list-group-flush">
+  <% users.forEach(function(user){ %>
+    <h1>
+      <li class="list-group-item">Kullanıcı adı: <%- user.name %></li>
+      <li class="list-group-item">Kullanıcı id: <%- user._id %></li>
+      <a style="width: 100%;" href="/sil/<%- user._id %>/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><%- user.name %> Adlı Kullanıcıyı Sil</a>
+    </h1>
+  <% }) %>  
+  </ul>
+</div>
+  
+</div>
+
+
+<%=  %>
+<% } %>
