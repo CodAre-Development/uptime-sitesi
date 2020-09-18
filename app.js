@@ -66,18 +66,20 @@ const http = require('http');
 
 
 
-app.get('/', function (req, res) {
-  mongoose.connect("mongo linki", function (err,db) {
+setInterval(() => {
+    mongoose.connect("Mongo Adresi", function (err,db) {
     var users=db.collection("sites");
     users.find({}).toArray(function (err, result){  
-      result.forEach(function(site){
-        setInterval(() => {
-        http.get(site.site_link);
-        }, 280000);
+      result.forEach(site =>{
+        if(!site) return;
+          try {
+            fetch(site.site_link)
+            console.log("Pinglenen Site:" + site.site_link)
+          } catch(e) { console.log("" + e) };
       })
     })
   });
-});
+}, 60000)
 
 
 
