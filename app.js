@@ -65,6 +65,7 @@ app.use('/users', require('./routes/users.js'));
 const http = require('http');
 
 
+const fetch = require("node-fetch");
 
 setInterval(() => {
     mongoose.connect("Mongo Adresi", function (err,db) {
