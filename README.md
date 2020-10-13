@@ -1,2 +1,3 @@
 # uptime-sitesi
-Glitch: https://glitch.com/edit/#!/uptime-iste
+
+# İstediğiniz gibi kullanın amk mongodb sitesine girip hesap açın ordan database açın oraya burayı sonra güncellicem amcıklar
