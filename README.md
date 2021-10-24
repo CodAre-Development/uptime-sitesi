@@ -1,13 +1,7 @@
-# uptime-sitesi
+# Node Console
+Run console applications in your browser!
 
-# Hi guys welcom to my mongo db tutorial şaka şaka bakın şimdi girin kayıt olun sonra ekrana şu gelicek
+![](https://cdn.glitch.com/9fcb4c92-412a-4570-bd9b-ca8fd060eb5b%2FScreen%20Shot%202017-02-03%20at%2011.32.44.png)
 
-![Test Image 1](https://cdn.discordapp.com/attachments/763742452511146025/786354781756719104/1l2km.png)
-
-# Buradan açın clusteri sonra gidin free yi şeçin işte o kadar sonra network ayarlarına gelin
-
-![Test Image 1](https://cdn.discordapp.com/attachments/763742452511146025/786355078151274576/ygx6u.png)
-
-# Bu şekilde network acces açın sonra network accesin üstündeki database accesden read and write admin açınız sonra clusters sayfasındaki clusterinizdkei connete basıp connet app diyin ordaki linki kopyalayın kendi ayarlarınıza göre doldurun
-
-![Test Image 1](https://raksix.wtf/resim/fs2o1.gif)
+## Usage
+Write your console application and put the start command in `package.json`, instead of `node server.js`.
